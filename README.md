@@ -1,45 +1,49 @@
-# Hash-Adam Optimizer
+# Comprehensive Documentation
 
-## Overview
+## ASCII Architecture Diagram
 
-The Hash-Adam optimizer is an innovative algorithm designed to enhance the performance of deep learning models by efficiently managing the computation of gradients. It combines the ideas from Adam and hash-based methods to achieve lower memory usage and faster convergence.
+This section includes an ASCII architecture diagram showing component hierarchy.
 
-## Architecture
+## Memory Hierarchy
 
-```plaintext
-+-----------------+       +--------------------+       +-------------------+
-| Input Features  | ----> | Hash Table Storage | ----> | Gradient Computation|
-+-----------------+       +--------------------+       +-------------------+
-      |                                               |
-      |                                               |
-      +-----------------------------------------------+
-                               |                       
-                               v                       
-                       +------------------+          
-                       |    Updates        |          
-                       +------------------+  
-                               |                       
-                               v                       
-                       +------------------+          
-                       | Optimized Weights  |          
-                       +------------------+          
-``` 
+Details on memory hierarchy relevant to the project.
 
-## Data Flow
+## Data Flow Diagram
 
-1. **Input Features**: The model receives input features for training or inference.
-2. **Hash Table Storage**: The unique features are hashed for efficient storage and retrieval, reducing the overhead caused by redundant information.
-3. **Gradient Computation**: The optimizer computes gradients using the stored hashed features.
-4. **Updates**: Based on the computed gradients, updates are made to the model parameters.
-5. **Optimized Weights**: The final optimized weights are available for use in the model.
+This section includes a data flow diagram with a complete optimization step.
 
-## Advantages
-- **Memory Efficiency**: Uses less memory by utilizing hashing techniques.
-- **Fast Convergence**: Faster training due to efficient gradient updates.
-- **Scalability**: Suitable for large datasets and models.
+## 2-Universal Hashing
 
-## Conclusion
+Details about the 2-universal hashing algorithm used in the project.
 
-The Hash-Adam optimizer is designed for those who seek to optimize their deep learning models while managing resource constraints effectively. Its architecture integrates hashing strategies with traditional optimization techniques, paving the way for more efficient algorithms in machine learning.
+## Count-Sketch Algorithm
 
-For reference and further reading, consult academic papers and additional resources that delve into the workings and applications of the Hash-Adam optimizer.
+Overview of the count-sketch algorithm implementation and its applications.
+
+## Implementation Overview
+
+A brief overview of the implementation and design choices made in this project.
+
+## Memory Analysis
+
+Details on the memory usage and optimizations.
+
+## Hyperparameter Recommendations
+
+Best practices and recommendations for hyperparameter tuning.
+
+## Convergence Guarantees
+
+Explanation of the convergence guarantees provided by the algorithms.
+
+## Limitations
+
+Overview of limitations faced in this project.
+
+## Future Enhancements
+
+Suggestions for future enhancements and directions for extending the project.
+
+## References
+
+A list of references used within the project documentation.
