@@ -1,12 +1,45 @@
-Hash-Adam (Count-Sketch Optimizer)
-==================================
-A memory-efficient Adam variant that compresses optimizer states (m, v)
-into compact hash tables via 2-Universal Hashing + Count-Sketch.
+# Comprehensive Documentation
 
-Optimizer state memory: O(K) per parameter instead of O(N).
-The tiny hash tables can fit in GPU L1/L2 cache, smashing the memory wall.
+## Overview
+This documentation provides an overview of the system architecture and data flow within the application. It is essential for understanding the inner workings of the platform.
 
-Theory: First moment (m) uses Count-Sketch with sign hashing s(i) ∈ {-1, +1}
-        for unbiased estimation with Chernoff-bound guarantees.
-        Second moment (v) uses direct hash accumulation (no sign hash) —
-        collisions safely overestimate v, acting as implicit regularization.
+## ASCII Architecture Diagram
+```
++-----------------------+
+|                       |
+|       Frontend        |
+|                       |
++----+------------+-----+
+     |            |
+     |            |
++----v-----+ +----v-----+
+|          | |          |
+|  API     | | Database  |
+|  Server  | |          |
+|          | |          |
++----------+ +----------+
+```
+
+## Data Flow Diagram
+```
++--------------------+
+|  User Interaction   |
++---------+----------+
+          |  
+          | HTTP Requests
+          |  
++---------v----------+
+|    API Server      |
++---------+----------+
+          |  
+          | Database Queries
+          |  
++---------v----------+
+|       Database     |
++--------------------+
+```
+
+## Conclusion
+This document is essential for developers and stakeholders to understand how data is processed and the architecture of the system. 
+
+Feel free to add more substantial descriptions or additional diagrams based on upcoming functionalities or business needs.
