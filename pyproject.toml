@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "collins-optim"
+version = "0.1.0"
+description = "Memory-efficient Adam optimizer via Count-Sketch compression — 32x less optimizer state memory"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "lizixi-0x2F" }]
+keywords = ["optimizer", "deep-learning", "pytorch", "memory-efficient", "count-sketch", "adam"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+dependencies = ["torch>=2.0"]
+
+[project.urls]
+Homepage = "https://github.com/lizixi-0x2F/Collins-1"
+Repository = "https://github.com/lizixi-0x2F/Collins-1"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/collins"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/", "README.md", "LICENSE"]

@@ -1,6 +1,6 @@
 """
-Hash-Adam (Count-Sketch Optimizer)
-==================================
+Collins Optimizer
+=================
 A memory-efficient Adam variant that compresses optimizer states (m, v)
 into compact hash tables via 2-Universal Hashing + Count-Sketch.
 
@@ -18,7 +18,7 @@ import torch
 from torch.optim import Optimizer
 
 
-class HashAdam(Optimizer):
+class Collins(Optimizer):
     """
     Adam with Count-Sketch compressed momentum states.
 
@@ -88,7 +88,7 @@ class HashAdam(Optimizer):
 
                 grad = p.grad
                 if grad.is_sparse:
-                    raise RuntimeError("HashAdam does not support sparse gradients")
+                    raise RuntimeError("Collins does not support sparse gradients")
 
                 # Lazy state init
                 if len(self.state[p]) == 0:
